@@ -9,17 +9,18 @@
 <body>
   <div id="todo-container">
     <form #todoform="ngForm" (ngSubmit)="addtodofunc(todoform.value)">
-    <div id="todo-heading">Todo List</div>
-    <input type="text" id="todo-input" [(ngModel)]="todoValue" name="todo" placeholder="Add a new todo">
-    <button type="submit" id="add-button">Add</button>
+      <div id="todo-heading">Todo List</div>
+      <input type="text" id="todo-input" [(ngModel)]="todoValue" name="todo" placeholder="Add a new todo">
+      <button type="submit" id="add-button">Add</button>
     </form>
     <ul id="todo-list" *ngFor="let item of todos">
       <li class="todo-item">
         <span>{{item.todo}}</span>
-        <button class="delete-button" (click)="deleteTodoConfirmation(item.id)" >Delete</button>
+        <div>
+          <button class="delete-button" (click)="deleteTodoConfirmation(item.id)" >Delete</button>
+        </div>
       </li>
     </ul>
   </div>
-
 </body>
 </html>
