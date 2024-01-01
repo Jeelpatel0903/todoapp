@@ -1,12 +1,3 @@
 {
-  "todolist": [
-    {
-      "todo": "play",
-      "id": 1
-    },
-    {
-      "todo": "abc",
-      "id": 3
-    }
-  ]
+  "todolist": []
 }

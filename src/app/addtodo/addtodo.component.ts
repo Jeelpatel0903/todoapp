@@ -1,6 +1,7 @@
 import { Component ,OnInit } from '@angular/core';
 import { AddtodoserviceService } from '../service/addtodoservice.service';
 import Swal from 'sweetalert2';
+import { timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-addtodo',
@@ -19,15 +20,15 @@ export class AddtodoComponent {
   todoValue: string = '';
   addtodofunc(data:any):void
   {
-    this.add.addTodo(data).subscribe((result)=>{
+      this.add.addTodo(data).subscribe((result)=>{
       this.add.showSuccessAlert('Your item Is Successfully Added in Your <b>Todo List</b>');
       this.getTodoList();
       this.todoValue='';
     });
   }
 
-  getTodoList():any {
-    this.add.gettodo().subscribe((res:any) => {
+    getTodoList():any {
+      this.add.gettodo().subscribe((res:any) => {
       this.todos = res;
     });
   }
